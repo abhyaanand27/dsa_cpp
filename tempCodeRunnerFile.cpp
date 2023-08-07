@@ -1,0 +1,1 @@
+cout << isHappy(n) << endl;
