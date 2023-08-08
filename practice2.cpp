@@ -42,10 +42,8 @@ cout << revstr[ss, size] << endl;
 }
 */
 
-
-
-void tokenize(string s, string del = " ")
-{
+void tokenize(string s, string del = " "){
+	
 	int start, end = -1*del.size();
 	do {
 		start = end + del.size();

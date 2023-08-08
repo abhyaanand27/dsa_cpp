@@ -1,10 +1,8 @@
 #include <iostream>
 using namespace std;
-
-
 void a(int& i){
     cout<<i<<endl;
-    b(i)
+    b(i);
 }
 void b(int& i){
     cout<<i<<endl;
