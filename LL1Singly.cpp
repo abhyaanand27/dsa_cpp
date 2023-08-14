@@ -74,17 +74,17 @@ void InsertAtPosition(node* &tail, node* &head, int position, int d) {
 
 void deleteNode(int position, node* &head){
     
-    // deleting first or start node
+    // deleting first node
     if(position == 1){
         node* temp = head;
         head = head -> next;
-        //memory free
+        //memory free using destructor
         temp -> next = NULL;
         delete temp;
 
     }
     else{
-        // deleting and middle node or last node
+        // deleting middle node or last node
         node* curr = head;
         node* prev = NULL;
 
