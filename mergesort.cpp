@@ -72,15 +72,18 @@ void mergesort(int *arr, int s, int e){
 
 int main(){
 
-    int arr[5] = {3,94,56,12,77};
-    int n = 5;
-    
+    int n ;
+    cout << "enter length of array: " << endl;
+    cin >> n;
+    cout << "enter elements" << endl;
+    int *arr = new int[n];
+    for(int i = 0; i<n; i++) {
+        cin >> arr[i];
+    } 
     mergesort(arr, 0, n-1);
-
-    for(int i =0; i < n; i++){
-        cout << arr[i] << "  ";
+    for(int j = 0; j<n; j++) {
+       cout << arr[j] << " ";
     }
-
     return 0;
 
 }
