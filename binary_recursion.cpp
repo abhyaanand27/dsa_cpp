@@ -11,7 +11,6 @@ int Binarysearch(int arr[], int start, int end , int key){
         if(key == arr[mid]){
             return mid;
         }
-
         if(key > arr[mid]){
             return Binarysearch(arr, mid+1, end, key);
         }
@@ -19,7 +18,6 @@ int Binarysearch(int arr[], int start, int end , int key){
             return Binarysearch(arr, 0, mid-1, key);
         }
     }
-
     return -1;
 }
 
