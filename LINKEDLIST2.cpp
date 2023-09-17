@@ -32,19 +32,19 @@ void insertAtTail(Node* &head, int d) {
 
 void insertAtPosition(Node* &head, int d, int position) {
     
+    Node* temp = head;
+    int cnt = 1;
+    
     if(position == 1){
         insertAtHead(head, d);
         return; 
     }
-    Node* temp = head;
-    int cnt = 1;
-    
+        
     while(cnt < position-1){
         temp = temp -> next;
         cnt++;
-    }
+    }   
 
-    
     if(temp -> next == NULL){
         insertAtTail(head,d);
         return;

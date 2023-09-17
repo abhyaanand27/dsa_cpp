@@ -8,7 +8,7 @@ class Node {
     Node* next;
 };
 
-void InsertAtHead(Node* &head, int d){
+void insertAtHead(Node* &head, int d){
 
     Node* temp = new Node();
     temp -> value = d;
@@ -16,16 +16,47 @@ void InsertAtHead(Node* &head, int d){
     head = temp; 
 }
 
-void InsertAtTail(Node* &tail, int d){
+void insertAtTail(Node* &head, int d){
+    Node* tail = head;
+    while(tail -> next != NULL) {
+        tail = tail -> next;
+    }
     Node* temp = new Node();
     temp -> value = d;
-    tail -> next =  temp;
-    tail = tail -> next;
+    tail -> next = temp;
+    
+}
+
+void insertAtPosition(Node* &head, int d, int position) {
+
+    Node* curr = head;
+    int cnt = 1;
+    
+    if(position == 1) {
+        insertAtHead(head, d);
+        return;
+    }
+
+    while(cnt < position-1) {
+        curr = curr -> next;
+        cnt++;
+    }
+
+    if(curr -> next == NULL) {
+        insertAtTail(head, d);
+        return;
+    }
+
+    Node* nodeToInsert = new Node();
+    nodeToInsert -> value = d;
+
+    nodeToInsert -> next = curr -> next;
+    curr -> next = nodeToInsert;
+
 }
 
 int main() {
     Node* head;
-    Node* tail;
     Node* one = new Node();
     Node* two = new Node();
     Node* three = new Node();
@@ -38,22 +69,17 @@ int main() {
     two-> next = three;
     three-> next = NULL;
     head = one;
-    tail = three;
-
-    
 
     cout << endl;
     cout << "Printing values of linked list:" << endl;
-    InsertAtHead(head,500);
-    InsertAtTail(tail,400);
+    insertAtHead(head,500);
+    insertAtTail(head,400);
+    insertAtPosition(head, 40, 5);
+    insertAtPosition(head, 50, 6);
 
     while(head!=NULL){
         cout << head->value << " ";
         head = head->next;
-    }
-
-    
-
-
+     }
     return 0;
 }

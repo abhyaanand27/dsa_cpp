@@ -79,7 +79,7 @@ void deleteNode(int position, node* &head){
         node* temp = head;
         head = head -> next;
         //memory free using destructor
-        temp -> next = NULL;
+        temp -> next = NULL; 
         delete temp;
 
     }
