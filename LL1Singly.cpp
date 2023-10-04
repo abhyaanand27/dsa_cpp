@@ -81,11 +81,10 @@ void deleteNode(int position, node* &head){
         //memory free using destructor
         temp -> next = NULL; 
         delete temp;
-
     }
     else{
         // deleting middle node or last node
-        node* curr = head;
+        node* curr = head; 
         node* prev = NULL;
 
         int cnt = 1;
